@@ -3,7 +3,7 @@ import { Box, Text, Icon } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
-    <Box as="nav" w="100%" py={6} px={6} bgColor="white">
+    <Box as="nav" w="100%" py={4} px={6} bgColor="white">
       <Icon
         color="brand.600"
         boxSize={8}
