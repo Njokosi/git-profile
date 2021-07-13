@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Box, Container, Text, Flex } from "@chakra-ui/react";
+import { Navbar, Footer, Hero, Stats } from "../components";
 
 const Layout = () => {
-    return (
-      <>
-        <nav className="Nav bar here"></nav>
-        <main className="">Main components of Layout here</main>
-        <footer className="">Footer here</footer>
-      </>
-    );
-}
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Container maxW="container.xl">
+        <Stats />
+      </Container>
+      <footer className="">Footer here</footer>
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
