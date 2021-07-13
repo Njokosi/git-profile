@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Git profile</title>
         <meta name="description" content="Beautified version of your github profile" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
