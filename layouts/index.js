@@ -9,7 +9,6 @@ const Layout = () => {
       {/* <Navbar /> */}
       <Hero />
       <Container maxW="container.xl">
-        <Stats />
         <Flex w="100%" py={4}>
           <Box w="25%">
             <UserDetail />
