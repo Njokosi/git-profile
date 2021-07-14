@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react";
 import { Box, Text, Flex, Icon } from "@chakra-ui/react";
-
 
 const Detail = ({ icon, text }) => {
   return (
@@ -8,29 +7,48 @@ const Detail = ({ icon, text }) => {
       <Box as="span" mr={2}>
         {icon}
       </Box>
-      <Text>{text}</Text>
+      <Text fontSize="sm" color="gray.700">
+        {text}
+      </Text>
     </Flex>
   );
 };
 
-const UserDetail = () => {
-    return (
-      <>
-        <Detail icon={<CalendarIcon />} text="Joined December, 2021" />
-        <Detail icon={<BriefcaseIcon />} text="e-Government Authority" />
-        <Detail icon={<ShieldIcon />} text="Available for hire" />
-        <Detail icon={<LocationIcon />} text="Tanzania" />
-      </>
-    );
-}
+const UserDetail = ({ userData }) => {
+  return (
+    <>
+      {userData.created_at && (
+        <Detail
+          icon={<CalendarIcon />}
+          text={`Joined ${new Date(userData.created_at).toLocaleDateString(
+            "en-US",
+            {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            }
+          )}`}
+        />
+      )}
+      {userData?.company && (
+        <Detail icon={<BriefcaseIcon />} text={userData.company} />
+      )}
 
-export default UserDetail
+      {userData?.hireable && (
+        <Detail icon={<ShieldIcon />} text="Available for hire" />
+      )}
+      <Detail icon={<LocationIcon />} text={userData.location} />
+    </>
+  );
+};
+
+export default UserDetail;
 
 const BriefcaseIcon = () => {
   return (
     <Icon
       color="brand.500"
-      boxSize={5}
+      boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
     >
@@ -46,7 +64,7 @@ const LocationIcon = () => {
   return (
     <Icon
       color="brand.500"
-      boxSize={5}
+      boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
     >
@@ -62,7 +80,7 @@ const CalendarIcon = () => {
   return (
     <Icon
       color="brand.500"
-      boxSize={5}
+      boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
     >
@@ -78,7 +96,7 @@ const ShieldIcon = () => {
   return (
     <Icon
       color="brand.500"
-      boxSize={5}
+      boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
     >

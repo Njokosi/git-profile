@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import GhPolyglot from "gh-polyglot";
 import Head from "next/head";
+import { Box, Container, Flex } from "@chakra-ui/react";
+import { Hero, Repositories, Stats, UserDetail } from "../components";
 
 const User = (props) => {
   //   const username = props.query.id;
@@ -26,6 +29,17 @@ const User = (props) => {
         setError({ active: true, type: 400 });
         console.error("Error:", error);
       });
+  };
+
+  const getLangData = () => {
+    const me = new GhPolyglot(`${username}`);
+    me.userStats((err, stats) => {
+      if (err) {
+        console.error("Error:", err);
+        setError({ active: true, type: 400 });
+      }
+      setLangData(stats);
+    });
   };
 
   const getRepoData = () => {
@@ -57,7 +71,7 @@ const User = (props) => {
       });
 
     getUserData();
-    // getLangData();
+    getLangData();
     getRepoData();
 
     // setUserData(mockUserData);
@@ -68,8 +82,18 @@ const User = (props) => {
   return (
     <>
       <Head title={`${username ? `BeauGit | ${username}` : "BeauGit"}`} />
-      <div>{console.log("The user data: ", userData)}</div>
-      <p className="text-brand-500">fghjkkjdfghj</p>
+      {userData && <Hero userData={userData} />}
+      <Container maxW="container.xl">
+        <Flex w="100%" py={4}>
+          <Box w="25%">
+            {userData && <UserDetail userData={userData} />}
+          </Box>
+          <Box w="75%">
+            <Stats />
+            <Repositories />
+          </Box>
+        </Flex>
+      </Container>
     </>
   );
 };
