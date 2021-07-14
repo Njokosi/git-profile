@@ -10,7 +10,7 @@ const Layout = () => {
       <Container maxW="container.xl">
         <Stats />
       </Container>
-      <footer className="">Footer here</footer>
+      {/* <footer className="">Footer here</footer> */}
     </>
   );
 };
