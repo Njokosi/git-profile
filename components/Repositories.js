@@ -7,11 +7,15 @@ import {
   Heading,
   Flex,
   HStack,
+  Wrap,
+  WrapItem,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 
-const GitDetail = () => {
+const GitDetail = ({ name, forks, size, stars }) => {
   return (
-    <Box>
+    <Box w="100%">
       <Flex alignItems="center" mb={6}>
         <Icon
           boxSize={4}
@@ -31,66 +35,62 @@ const GitDetail = () => {
           textTransform="lowercase"
           color="gray.700"
         >
-          e-Task
+          {name}
         </Heading>
       </Flex>
-
-      <HStack spacing={4}>
+      <Flex alignItems="center" justifyContent="space-between" w="100%">
+        <HStack spacing={4}>
+          <Flex alignItems="center">
+            <StarIcon />
+            <Text color="gray.500" as="span" ml={1} fontSize="sm">
+              {stars}
+            </Text>
+          </Flex>
+          <Flex alignItems="center">
+            <GitIcon />
+            <Text color="gray.500" as="span" ml={1} fontSize="sm">
+              {forks}
+            </Text>
+          </Flex>
+        </HStack>
         <Flex alignItems="center">
-          <StarIcon />
-          <Text color="gray.500" as="span" ml={1} fontSize="sm">
-            0
+          <Text color="gray.500" as="span" ml={1} fontSize="xs">
+            {size} KB
           </Text>
         </Flex>
-        <Flex alignItems="center">
-          <GitIcon />
-          <Text color="gray.500" as="span" ml={1} fontSize="sm">
-            0
-          </Text>
-        </Flex>
-      </HStack>
+      </Flex>
     </Box>
   );
 };
 
-const Repositories = () => {
+const Repositories = ({ repoData }) => {
   return (
     <Box mt={12}>
-      <Heading fontSize="2xl" mb={8}>
+      <Heading fontSize="xl" mb={8}>
         Repositories
       </Heading>
-      <Stack direction={["column", "row"]} spacing={8}>
-        <Box
-          w={1 / 3}
-          borderRadius={10}
-          py={6}
-          px={5}
-          shadow="md"
-          borderWidth="1px"
-        >
-          <GitDetail />
-        </Box>
-        <Box
-          w={1 / 3}
-          borderRadius={10}
-          py={6}
-          px={5}
-          shadow="md"
-          borderWidth="1px"
-        >
-          <GitDetail />
-        </Box>
-        <Box
-          w={1 / 3}
-          borderRadius={10}
-          py={6}
-          px={5}
-          shadow="md"
-          borderWidth="1px"
-        >
-          <GitDetail />
-        </Box>
-      </Stack>
+      <Grid templateColumns="repeat(6, 1fr)" gap={4}>
+        {repoData.map((repo) => {
+          return (
+            <GridItem
+              key={repo.id}
+              colSpan={2}
+              borderRadius={10}
+              py={6}
+              px={5}
+              shadow="md"
+              borderWidth="1px"
+            >
+              <GitDetail
+                name={repo.name}
+                stars={repo.stargazers_count.toLocaleString()}
+                forks={repo.forks.toLocaleString()}
+                size={repo.size.toLocaleString()}
+              />
+            </GridItem>
+          );
+        })}
+      </Grid>
     </Box>
   );
 };

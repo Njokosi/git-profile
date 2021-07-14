@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Text, Flex, Stack, Heading } from "@chakra-ui/react";
 import UserDetail from "./UserDetail";
 
-
 const StatDetail = ({ title, value, ...rest }) => {
   return (
     <Box
@@ -43,13 +42,14 @@ const data_stats = [
   },
 ];
 
-const Stats = () => {
+const Stats = ({ userData }) => {
   return (
     <>
       <Stack direction={["column", "row"]} spacing={8}>
-        {data_stats.map((p) => {
-          return <StatDetail key={p.title} title={p.title} value={p.value} />;
-        })}
+        <StatDetail title="Following" value={userData.following} />
+        <StatDetail title="Followers" value={userData.followers} />
+        <StatDetail title="Public Gists" value={userData.public_gists} />
+        <StatDetail title="Repositories" value={userData.public_repos} />
       </Stack>
 
       {/* <Repositories /> */}

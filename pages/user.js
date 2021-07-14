@@ -85,12 +85,10 @@ const User = (props) => {
       {userData && <Hero userData={userData} />}
       <Container maxW="container.xl">
         <Flex w="100%" py={4}>
-          <Box w="25%">
-            {userData && <UserDetail userData={userData} />}
-          </Box>
+          <Box w="25%">{userData && <UserDetail userData={userData} />}</Box>
           <Box w="75%">
-            <Stats />
-            <Repositories />
+            {userData && <Stats userData={userData} />}
+            {repoData && <Repositories repoData={repoData} />}
           </Box>
         </Flex>
       </Container>
