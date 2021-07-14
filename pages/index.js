@@ -5,9 +5,9 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className=''>
+    <div className="">
       <Head>
-        <title>GitProfile</title>
+        <title>BeauGit</title>
         <meta
           name="description"
           content="Beautified version of your github profile"

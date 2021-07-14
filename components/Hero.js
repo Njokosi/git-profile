@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Image } from "@chakra-ui/react";
+import { Box, Container, Image, Flex, Heading } from "@chakra-ui/react";
 
 const Hero = () => {
   const user = {
@@ -9,7 +9,18 @@ const Hero = () => {
 
   return (
     <>
-      <Box w="100%" h="300px" borderRadius="lg" bgColor="secondary.50" />
+      <Flex w="100%" h="300px" borderRadius="lg" bgColor="secondary.100">
+        <Container display="flex" alignItems="stretch" justifyContent="flex-end" maxW="container.xl">
+          <Flex justifyContent="flex-end" alignItems="center">
+            <Image
+              h="250px"
+              src="/illustrations/lime-483.png"
+              alt="Technology Illustration"
+            />
+          </Flex>
+        </Container>
+      </Flex>
+
       <Container maxW="container.xl">
         <Box mt={-24}>
           <Image

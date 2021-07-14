@@ -67,7 +67,7 @@ const User = (props) => {
 
   return (
     <>
-      <Head title={`${username ? `GitProfile | ${username}` : "GitProfile"}`} />
+      <Head title={`${username ? `BeauGit | ${username}` : "BeauGit"}`} />
       <div>{console.log("The user data: ", userData)}</div>
       <p className="text-brand-500">fghjkkjdfghj</p>
     </>

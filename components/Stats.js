@@ -6,12 +6,13 @@ import { Box, Text, Flex, Stack, Heading } from "@chakra-ui/react";
 const Stats = () => {
   return (
     <Flex w="100%" py={4}>
-      <Box w="25%">
+      <Box w="25%"></Box>
+      <Box w="75%">
         <Stack direction={["column", "row"]} spacing={8}>
           <Box
             textAlign="center"
             w="50%"
-            py={4}
+            py={6}
             px={5}
             shadow="md"
             borderWidth="1px"
@@ -24,7 +25,7 @@ const Stats = () => {
           <Box
             textAlign="center"
             w="50%"
-            py={4}
+            py={6}
             px={5}
             shadow="md"
             borderWidth="1px"
@@ -36,7 +37,6 @@ const Stats = () => {
           </Box>
         </Stack>
       </Box>
-      <Box w="75%">{/* <Text>Here text brothere</Text> */}</Box>
     </Flex>
   );
 };

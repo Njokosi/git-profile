@@ -20,6 +20,7 @@ const theme = extendTheme({
     },
     secondary: {
       50: "#EEFCFE",
+      100: "#D3F5FF",
     },
   },
 });

@@ -5,7 +5,7 @@ import { Navbar, Footer, Hero, Stats } from "../components";
 const Layout = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Container maxW="container.xl">
         <Stats />
