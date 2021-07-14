@@ -29,7 +29,7 @@ export default UserDetail
 const BriefcaseIcon = () => {
   return (
     <Icon
-      color="brand.600"
+      color="brand.500"
       boxSize={5}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
@@ -45,7 +45,7 @@ const BriefcaseIcon = () => {
 const LocationIcon = () => {
   return (
     <Icon
-      color="brand.600"
+      color="brand.500"
       boxSize={5}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
@@ -61,7 +61,7 @@ const LocationIcon = () => {
 const CalendarIcon = () => {
   return (
     <Icon
-      color="brand.600"
+      color="brand.500"
       boxSize={5}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
@@ -77,7 +77,7 @@ const CalendarIcon = () => {
 const ShieldIcon = () => {
   return (
     <Icon
-      color="brand.600"
+      color="brand.500"
       boxSize={5}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
