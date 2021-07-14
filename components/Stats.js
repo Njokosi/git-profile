@@ -46,10 +46,10 @@ const Stats = ({ userData }) => {
   return (
     <>
       <Stack direction={["column", "row"]} spacing={8}>
-        <StatDetail title="Following" value={userData.following} />
-        <StatDetail title="Followers" value={userData.followers} />
-        <StatDetail title="Public Gists" value={userData.public_gists} />
-        <StatDetail title="Repositories" value={userData.public_repos} />
+        <StatDetail title="Following" value={userData?.following} />
+        <StatDetail title="Followers" value={userData?.followers} />
+        <StatDetail title="Public Gists" value={userData?.public_gists} />
+        <StatDetail title="Repositories" value={userData?.public_repos} />
       </Stack>
 
       {/* <Repositories /> */}

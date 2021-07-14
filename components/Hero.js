@@ -3,7 +3,7 @@ import { Box, Container, Image, Flex, Heading } from "@chakra-ui/react";
 
 const Hero = ({ userData }) => {
   const user = {
-    imageUrl: userData.avatar_url,
+    imageUrl: userData?.avatar_url,
     imageAlt: "User profile",
   };
 

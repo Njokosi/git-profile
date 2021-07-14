@@ -70,7 +70,7 @@ const Repositories = ({ repoData }) => {
         Repositories
       </Heading>
       <Grid templateColumns="repeat(6, 1fr)" gap={4}>
-        {repoData.map((repo) => {
+        {repoData?.map((repo) => {
           return (
             <GridItem
               key={repo.id}
