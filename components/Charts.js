@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import PieChart from "./charts/PieChart";
 import RadarChart from "./charts/RadarChart";
+import PolarAreaChart from "./charts/PolarAreaChart";
 
 const Charts = () => {
   return (
@@ -61,7 +62,7 @@ const Charts = () => {
                 Most Starred
               </Heading>
             </Box>
-            <PieChart />
+            <PolarAreaChart />
           </Box>
         </GridItem>
       </Grid>
