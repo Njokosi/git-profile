@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GhPolyglot from "gh-polyglot";
 import Head from "next/head";
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { Hero, Repositories, Stats, UserDetail } from "../components";
+import { Hero, Repositories, Stats, UserDetail, Charts } from "../components";
 
 const User = (props) => {
   //   const username = props.query.id;
@@ -88,6 +88,7 @@ const User = (props) => {
           <Box w="25%">{userData && <UserDetail userData={userData} />}</Box>
           <Box w="75%">
             {userData && <Stats userData={userData} />}
+            <Charts />
             {repoData && <Repositories repoData={repoData} />}
           </Box>
         </Flex>

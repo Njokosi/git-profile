@@ -23,7 +23,6 @@ const Hero = ({ userData }) => {
               alt="Technology Illustration"
             />
           </Flex>
-          {console.log(userData)}
         </Container>
       </Flex>
 

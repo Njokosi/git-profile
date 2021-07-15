@@ -50,7 +50,7 @@ const RepoDetail = ({ name, forks, size, stars, language, languages }) => {
       <Flex alignItems="center">
         <Icon
           boxSize={2}
-          color="gray.200"
+          color="brand.400"
           style={{ color: langColors[language] }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
