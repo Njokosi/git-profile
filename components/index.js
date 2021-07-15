@@ -8,4 +8,5 @@ export { default as Repositories } from "./Repositories";
 export { default as UserDetail } from "./UserDetail";
 export { default as RepoDetail } from "./RepoDetail";
 export { default as Charts } from "./Charts";
+export { default as Contributions } from "./Contributions";
 

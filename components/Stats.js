@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Text, Flex, Stack, Heading } from "@chakra-ui/react";
+import { Box, Text, Link, Stack, Heading } from "@chakra-ui/react";
 import UserDetail from "./UserDetail";
 
-const StatDetail = ({ title, value, ...rest }) => {
+const StatDetail = ({ title, value, link }) => {
   return (
     <Box
       textAlign="center"
@@ -31,7 +31,10 @@ const Stats = ({ userData }) => {
         <StatDetail title="Following" value={userData?.following} />
         <StatDetail title="Followers" value={userData?.followers} />
         <StatDetail title="Public Gists" value={userData?.public_gists} />
-        <StatDetail title="Public Repos" value={userData?.public_repos} />
+        <StatDetail
+          title="Public Repos"
+          value={userData?.public_repos}
+        />
       </Stack>
     </>
   );

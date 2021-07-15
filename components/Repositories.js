@@ -18,8 +18,6 @@ import {
 import { fetcher } from "../functions";
 import { RepoDetail } from "../components";
 
-
-
 function GetLanguageInfo(repo_name) {
   const api_url = `https://api.github.com/repos/Njokosi/${repo_name}/languages`;
 
@@ -57,6 +55,7 @@ const Repositories = ({ repoData }) => {
                 size={repo.size.toLocaleString()}
                 language={repo.language}
                 // languages={GetLanguageInfo(repo.name)}
+                href={repo.html_url}
               />
             </GridItem>
           );

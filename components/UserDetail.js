@@ -38,6 +38,9 @@ const UserDetail = ({ userData }) => {
           )}`}
         />
       )}
+      {userData?.hireable && (
+        <Detail icon={<BriefcaseIcon />} text="Available for hire" />
+      )}
       {userData?.blog && (
         <Detail
           icon={<GlobeIcon />}
@@ -52,9 +55,7 @@ const UserDetail = ({ userData }) => {
           link={userData?.company}
         />
       )}
-      {userData?.hireable && (
-        <Detail icon={<BriefcaseIcon />} text="Available for hire" />
-      )}
+
       {userData?.location && (
         <Detail
           icon={<LocationIcon />}

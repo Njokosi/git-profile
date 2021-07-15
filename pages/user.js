@@ -9,6 +9,7 @@ import {
   UserDetail,
   Charts,
   Navbar,
+  Contributions,
 } from "../components";
 
 const User = (props) => {
@@ -102,10 +103,15 @@ const User = (props) => {
         <Flex w="100%" py={4}>
           <Box w="25%">{userData && <UserDetail userData={userData} />}</Box>
           <Box w="75%">
+
+
             {userData && <Stats userData={userData} />}
             {langData && repoData && (
               <Charts langData={langData} repoData={repoData} />
             )}
+            
+            {username && <Contributions username={username} />}
+
             {repoData && <Repositories repoData={repoData} />}
           </Box>
         </Flex>
