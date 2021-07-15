@@ -88,7 +88,9 @@ const User = (props) => {
           <Box w="25%">{userData && <UserDetail userData={userData} />}</Box>
           <Box w="75%">
             {userData && <Stats userData={userData} />}
-            <Charts />
+            {langData && repoData && (
+              <Charts langData={langData} repoData={repoData} />
+            )}
             {repoData && <Repositories repoData={repoData} />}
           </Box>
         </Flex>

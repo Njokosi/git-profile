@@ -69,7 +69,6 @@ const RepoDetail = ({ name, forks, size, stars, language, languages }) => {
           fontWeight="hairline"
         >
           {language}
-          {console.log("Languages found: ", languages)}
         </Text>
       </Flex>
     </Box>

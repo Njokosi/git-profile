@@ -23,24 +23,6 @@ const StatDetail = ({ title, value, ...rest }) => {
   );
 };
 
-const data_stats = [
-  {
-    title: "Following",
-    value: 5,
-  },
-  {
-    title: "Followers",
-    value: 5,
-  },
-  {
-    title: "Public Gists",
-    value: 5,
-  },
-  {
-    title: "Repositories",
-    value: 5,
-  },
-];
 
 const Stats = ({ userData }) => {
   return (
@@ -49,10 +31,8 @@ const Stats = ({ userData }) => {
         <StatDetail title="Following" value={userData?.following} />
         <StatDetail title="Followers" value={userData?.followers} />
         <StatDetail title="Public Gists" value={userData?.public_gists} />
-        <StatDetail title="Repositories" value={userData?.public_repos} />
+        <StatDetail title="Public Repos" value={userData?.public_repos} />
       </Stack>
-
-      {/* <Repositories /> */}
     </>
   );
 };

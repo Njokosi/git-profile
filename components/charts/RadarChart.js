@@ -9,8 +9,8 @@ class RadarChart extends React.Component {
     this.state = {
       series: [
         {
-          name: "Series 1",
-          data: [80, 50, 30, 40, 100, 20],
+          name: "Exp",
+          data: this.props.data,
         },
       ],
       options: {
@@ -19,19 +19,25 @@ class RadarChart extends React.Component {
           type: "radar",
           fontFamily: "Inter, sans-serif",
         },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["#3B82F6"],
+          dashArray: 0,
+        },
         plotOptions: {
           radar: {
             polygons: {
               strokeColor: "#BFDBFE",
               fill: {
-                colors: ["#DBEAFE", "#fff"],
+                colors: ["#EFF6FF", "#fff"],
               },
             },
           },
         },
 
         xaxis: {
-          categories: ["January", "February", "March", "April", "May", "June"],
+          categories: this.props.categories,
         },
       },
     };

@@ -12,12 +12,21 @@ import PieChart from "./charts/PieChart";
 import RadarChart from "./charts/RadarChart";
 import PolarAreaChart from "./charts/PolarAreaChart";
 
-const Charts = () => {
+const Charts = ({ langData, repoData }) => {
+  const data = [];
+  const categories = [];
+
+  for (let i = 0; i < langData.length; i++) {
+    data.push(langData[i].value);
+    categories.push(langData[i].label);
+  }
+
   return (
     <Box mt={12}>
       <Heading fontSize="xl" mb={8}>
         Statistics
       </Heading>
+      {console.log("Lang data dict: ", [langData])}
       <Grid templateColumns="repeat(6, 1fr)" gap={6}>
         <GridItem
           colSpan={3}
@@ -39,7 +48,7 @@ const Charts = () => {
                 Top languages
               </Heading>
             </Box>
-            <RadarChart />
+            <RadarChart data={data} categories={categories} />
           </Box>
         </GridItem>
         <GridItem
