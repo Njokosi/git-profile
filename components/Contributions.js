@@ -7,6 +7,7 @@ import { Box, Heading, Grid, Flex } from "@chakra-ui/react";
 const exampleTheme = {
   background: "transparent",
   text: "#000",
+  grade5: "#1D4ED8",
   grade4: "#2563EB",
   grade3: "#3B82F6",
   grade2: "#60A5FA",
