@@ -9,7 +9,17 @@ const Hero = ({ userData }) => {
 
   return (
     <>
-      <Flex w="100%" h="300px" borderRadius="lg" bgColor="secondary.100">
+      <Flex
+        w="100%"
+        h="300px"
+        borderBottomRadius="xl"
+        bgColor="secondary.100"
+        bgRepeat="no-repeat"
+        bgSize="auto"
+        bgPosition="50%"
+        overflow="hidden"
+        style={{ backgroundImage: "radial-gradient(circle at 1% 1%,#328bf2,#1644ad)"}}
+      >
         <Container
           display="flex"
           alignItems="stretch"

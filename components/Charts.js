@@ -9,6 +9,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import PieChart from "./charts/PieChart";
+import RadarChart from "./charts/RadarChart";
 
 const Charts = () => {
   return (
@@ -25,8 +26,20 @@ const Charts = () => {
           shadow="md"
           borderWidth="1px"
         >
-          <Box>Repo 1</Box>
-          <Box>Box 2</Box>
+          <Box>
+            <Box mb={4}>
+              <Heading
+                fontSize="md"
+                pb={4}
+                borderBottom="1px"
+                borderColor="gray.200"
+                color="gray.700"
+              >
+                Top languages
+              </Heading>
+            </Box>
+            <RadarChart />
+          </Box>
         </GridItem>
         <GridItem
           colSpan={3}
@@ -40,11 +53,12 @@ const Charts = () => {
             <Box mb={4}>
               <Heading
                 fontSize="md"
-                pb={2}
+                pb={4}
                 borderBottom="1px"
                 borderColor="gray.200"
+                color="gray.700"
               >
-                Top languages
+                Most Starred
               </Heading>
             </Box>
             <PieChart />
