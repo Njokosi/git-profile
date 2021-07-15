@@ -7,7 +7,7 @@ class PolarAreaChart extends React.Component {
     super(props);
 
     this.state = {
-      series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+      series: this.props.data,
       options: {
         chart: {
           type: "polarArea",
