@@ -12,7 +12,7 @@ import {
 } from "../components";
 
 const User = (props) => {
-  
+
   const username = props.query.id;
   const [userData, setUserData] = useState(null);
   const [langData, setLangData] = useState(null);
@@ -88,7 +88,14 @@ const User = (props) => {
 
   return (
     <>
-      <Head title={`${username ? `BeauGit | ${username}` : "BeauGit"}`} />
+      <Head>
+        <title>{`${username} | BeauGit`}</title>
+        <meta
+          name="description"
+          content="Beautified version of your github profile"
+        />
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
 
       {userData && <Hero userData={userData} />}
       <Container maxW="container.xl">

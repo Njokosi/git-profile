@@ -1,15 +1,23 @@
 import React from "react";
-import { Box, Text, Flex, Icon } from "@chakra-ui/react";
+// import Link from "next/link";
+import { Box, Text, Flex, Icon, Link } from "@chakra-ui/react";
 
-const Detail = ({ icon, text }) => {
+const Detail = ({ icon, text, link, href }) => {
   return (
     <Flex alignItems="center" mb={2}>
       <Box as="span" mr={2}>
         {icon}
       </Box>
-      <Text fontSize="sm" color="gray.700">
-        {text}
-      </Text>
+      {text && (
+        <Text fontSize="sm" color="gray.700">
+          {text}
+        </Text>
+      )}
+      {link && href && (
+        <Link href={href} isExternal fontSize="sm" color="brand.500">
+          {link}
+        </Link>
+      )}
     </Flex>
   );
 };
@@ -31,23 +39,34 @@ const UserDetail = ({ userData }) => {
         />
       )}
       {userData?.blog && (
-        <Detail icon={<GlobeIcon />} text={`${userData?.blog} `} />
+        <Detail
+          icon={<GlobeIcon />}
+          link={`${userData?.blog}`}
+          href={`${userData?.blog}`}
+        />
       )}
       {userData?.company && (
-        <Detail icon={<HomeIcon />} text={userData?.company} />
+        <Detail
+          icon={<HomeIcon />}
+          href={`https://www.google.com/search?q=${userData?.company}`}
+          link={userData?.company}
+        />
       )}
-
       {userData?.hireable && (
         <Detail icon={<BriefcaseIcon />} text="Available for hire" />
       )}
       {userData?.location && (
-        <Detail icon={<LocationIcon />} text={userData?.location} />
+        <Detail
+          icon={<LocationIcon />}
+          href={`https://www.google.com/maps/place/${userData?.location}`}
+          link={userData?.location}
+        />
       )}
-
       {userData?.twitter_username && (
         <Detail
           icon={<TwitterIcon />}
-          text={`@${userData?.twitter_username} `}
+          link={`@${userData?.twitter_username}`}
+          href={`https://twitter.com/${userData?.twitter_username}`}
         />
       )}
     </>
@@ -91,7 +110,6 @@ const BriefcaseIcon = () => {
   />
 </svg>;
 
-
 const LocationIcon = () => {
   return (
     <Icon
@@ -119,25 +137,24 @@ const LocationIcon = () => {
 };
 
 const HomeIcon = () => {
-    return (
-      <Icon
-        color="brand.500"
-        boxSize={4}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-        />
-      </Icon>
-    );
-}
-
+  return (
+    <Icon
+      color="brand.500"
+      boxSize={4}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+      />
+    </Icon>
+  );
+};
 
 const CalendarIcon = () => {
   return (
@@ -210,4 +227,3 @@ const GlobeIcon = () => {
     </Icon>
   );
 };
-
