@@ -93,7 +93,7 @@ const Repositories = ({ repoData }) => {
       <Heading fontSize="xl" mb={8}>
         Repositories
       </Heading>
-      <Grid templateColumns="repeat(6, 1fr)" gap={4}>
+      <Grid templateColumns="repeat(6, 1fr)" gap={6}>
         {repoData?.map((repo) => {
           return (
             <GridItem
