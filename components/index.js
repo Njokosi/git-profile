@@ -6,4 +6,4 @@ export { default as UserImage } from "./UserImage";
 export { default as Stats } from "./Stats";
 export { default as Repositories } from "./Repositories";
 export { default as UserDetail } from "./UserDetail";
-
+export { default as RepoDetail } from "./RepoDetail";

@@ -30,16 +30,20 @@ const UserDetail = ({ userData }) => {
           )}`}
         />
       )}
+      {userData?.blog && (
+        <Detail icon={<GlobeIcon />} text={`${userData?.blog} `} />
+      )}
       {userData?.company && (
-        <Detail icon={<BriefcaseIcon />} text={userData?.company} />
+        <Detail icon={<HomeIcon />} text={userData?.company} />
       )}
 
       {userData?.hireable && (
-        <Detail icon={<ShieldIcon />} text="Available for hire" />
+        <Detail icon={<BriefcaseIcon />} text="Available for hire" />
       )}
       {userData?.location && (
         <Detail icon={<LocationIcon />} text={userData?.location} />
       )}
+
       {userData?.twitter_username && (
         <Detail
           icon={<TwitterIcon />}
@@ -58,15 +62,35 @@ const BriefcaseIcon = () => {
       color="brand.500"
       boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
     >
       <path
-        fill="currentColor"
-        d="M464 128h-80V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v256c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zM176 80h160v48H176V80zM54 176h404c3.31 0 6 2.69 6 6v74H48v-74c0-3.31 2.69-6 6-6zm404 256H54c-3.31 0-6-2.69-6-6V304h144v24c0 13.25 10.75 24 24 24h80c13.25 0 24-10.75 24-24v-24h144v122c0 3.31-2.69 6-6 6z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
       />
     </Icon>
   );
 };
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-6 w-6"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
+    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+  />
+</svg>;
+
 
 const LocationIcon = () => {
   return (
@@ -74,15 +98,46 @@ const LocationIcon = () => {
       color="brand.500"
       boxSize={4}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 384 512"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
     >
       <path
-        fill="currentColor"
-        d="M192 0C85.903 0 0 86.014 0 192c0 71.117 23.991 93.341 151.271 297.424 18.785 30.119 62.694 30.083 81.457 0C360.075 285.234 384 263.103 384 192 384 85.903 297.986 0 192 0zm0 464C64.576 259.686 48 246.788 48 192c0-79.529 64.471-144 144-144s144 64.471 144 144c0 54.553-15.166 65.425-144 272zm-80-272c0-44.183 35.817-80 80-80s80 35.817 80 80-35.817 80-80 80-80-35.817-80-80z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
       />
     </Icon>
   );
 };
+
+const HomeIcon = () => {
+    return (
+      <Icon
+        color="brand.500"
+        boxSize={4}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+        />
+      </Icon>
+    );
+}
+
 
 const CalendarIcon = () => {
   return (
@@ -127,6 +182,26 @@ const TwitterIcon = () => {
       <path
         fill="currentColor"
         d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+      />
+    </Icon>
+  );
+};
+
+const GlobeIcon = () => {
+  return (
+    <Icon
+      boxSize={4}
+      color="brand.500"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </Icon>
   );
