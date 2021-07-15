@@ -13,7 +13,9 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 
-const GitDetail = ({ name, forks, size, stars }) => {
+import { langColors } from "../utils";
+
+const GitDetail = ({ name, forks, size, stars, language }) => {
   return (
     <Box w="100%">
       <Flex alignItems="center" mb={6}>
@@ -38,7 +40,7 @@ const GitDetail = ({ name, forks, size, stars }) => {
           {name}
         </Heading>
       </Flex>
-      <Flex alignItems="center" justifyContent="space-between" w="100%">
+      <Flex alignItems="center" justifyContent="space-between" w="100%" mb={4}>
         <HStack spacing={4}>
           <Flex alignItems="center">
             <StarIcon />
@@ -59,6 +61,28 @@ const GitDetail = ({ name, forks, size, stars }) => {
           </Text>
         </Flex>
       </Flex>
+      <Flex alignItems="center">
+        <Icon
+          boxSize={2}
+          style={{ color: langColors[language] }}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          />
+        </Icon>
+        <Text
+          ml={1}
+          as="span"
+          color="gray.600"
+          fontSize="xs"
+          fontWeight="hairline"
+        >
+          {language}
+        </Text>
+      </Flex>
     </Box>
   );
 };
@@ -74,7 +98,7 @@ const Repositories = ({ repoData }) => {
           return (
             <GridItem
               key={repo.id}
-              colSpan={2}
+              colSpan={3}
               borderRadius={10}
               py={6}
               px={5}
@@ -86,6 +110,7 @@ const Repositories = ({ repoData }) => {
                 stars={repo.stargazers_count.toLocaleString()}
                 forks={repo.forks.toLocaleString()}
                 size={repo.size.toLocaleString()}
+                language={repo.language}
               />
             </GridItem>
           );

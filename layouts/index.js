@@ -6,6 +6,7 @@ import UserDetail from "../components/UserDetail";
 const Layout = () => {
   return (
     <>
+    
       <Container maxW="container.xl">
         <Flex w="100%" py={4}>
           <Box w="25%">
