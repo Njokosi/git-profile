@@ -35,6 +35,14 @@ class RadarChart extends React.Component {
             },
           },
         },
+        dataLabels: {
+          style: {
+            fontSize: "14px",
+            fontFamily: "Inter, sans-serif",
+            fontWeight: "bold",
+            colors: ["#2563EB"],
+          },
+        },
 
         xaxis: {
           categories: this.props.categories,

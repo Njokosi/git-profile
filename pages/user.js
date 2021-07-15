@@ -2,11 +2,18 @@ import React, { useEffect, useState } from "react";
 import GhPolyglot from "gh-polyglot";
 import Head from "next/head";
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { Hero, Repositories, Stats, UserDetail, Charts } from "../components";
+import {
+  Hero,
+  Repositories,
+  Stats,
+  UserDetail,
+  Charts,
+  Navbar,
+} from "../components";
 
 const User = (props) => {
-  //   const username = props.query.id;
-  const username = "njokosi";
+  
+  const username = props.query.id;
   const [userData, setUserData] = useState(null);
   const [langData, setLangData] = useState(null);
   const [repoData, setRepoData] = useState(null);
@@ -82,6 +89,7 @@ const User = (props) => {
   return (
     <>
       <Head title={`${username ? `BeauGit | ${username}` : "BeauGit"}`} />
+
       {userData && <Hero userData={userData} />}
       <Container maxW="container.xl">
         <Flex w="100%" py={4}>
