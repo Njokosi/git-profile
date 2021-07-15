@@ -32,7 +32,7 @@ const Contributions = ({ username }) => {
       >
         <GitHubCalendar
           username={username}
-          fullYear={false}
+          fullYear={true}
           theme={exampleTheme}
           blockSize={14}
         >
