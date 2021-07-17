@@ -6,7 +6,12 @@ const StatDetail = ({ title, value, link }) => {
   return (
     <Box
       textAlign="center"
-      w={{ sm: "100%", md: "50%", lg: "25%" }}
+      width={[
+        "100%", // 0-30em
+        "100%", // 30em-48em
+        "50%", // 48em-62em
+        "25%", // 62em+
+      ]}
       py={6}
       px={5}
       shadow="md"
@@ -26,7 +31,7 @@ const StatDetail = ({ title, value, link }) => {
 const Stats = ({ userData }) => {
   return (
     <>
-      <Stack spacing={8}>
+      <Stack direction={["column", "column", "row"]} spacing={8}>
         <StatDetail title="Following" value={userData?.following} />
         <StatDetail title="Followers" value={userData?.followers} />
         <StatDetail title="Public Gists" value={userData?.public_gists} />
