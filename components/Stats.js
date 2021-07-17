@@ -6,7 +6,7 @@ const StatDetail = ({ title, value, link }) => {
   return (
     <Box
       textAlign="center"
-      w="25%"
+      w={{ sm: "100%", md: "50%", lg: "25%" }}
       py={6}
       px={5}
       shadow="md"
@@ -23,18 +23,14 @@ const StatDetail = ({ title, value, link }) => {
   );
 };
 
-
 const Stats = ({ userData }) => {
   return (
     <>
-      <Stack direction={["column", "row"]} spacing={8}>
+      <Stack spacing={8}>
         <StatDetail title="Following" value={userData?.following} />
         <StatDetail title="Followers" value={userData?.followers} />
         <StatDetail title="Public Gists" value={userData?.public_gists} />
-        <StatDetail
-          title="Public Repos"
-          value={userData?.public_repos}
-        />
+        <StatDetail title="Public Repos" value={userData?.public_repos} />
       </Stack>
     </>
   );

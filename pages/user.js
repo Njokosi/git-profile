@@ -101,16 +101,16 @@ const User = (props) => {
 
       {userData && <Hero userData={userData} />}
       <Container maxW="container.xl">
-        <Flex w="100%" py={4}>
-          <Box w="25%">{userData && <UserDetail userData={userData} />}</Box>
-          <Box w="75%">
-
-
+        <Flex w="100%" py={4} flexWrap="wrap">
+          <Box w={{ sm: "100", md: "25%" }}>
+            {userData && <UserDetail userData={userData} />}
+          </Box>
+          <Box w={{ sm: "100", md: "75%" }}>
             {userData && <Stats userData={userData} />}
             {langData && repoData && (
               <Charts langData={langData} repoData={repoData} />
             )}
-            
+
             {username && <Contributions username={username} />}
 
             {repoData && <Repositories repoData={repoData} />}
