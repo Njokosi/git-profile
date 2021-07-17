@@ -41,7 +41,7 @@ const Repositories = ({ repoData }) => {
           return (
             <GridItem
               key={repo.id}
-              colSpan={{sm: 6, md: 3}}
+              colSpan={[6, 6, 3]}
               borderRadius={10}
               py={6}
               px={5}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GhPolyglot from "gh-polyglot";
 import Head from "next/head";
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, GridItem } from "@chakra-ui/react";
 import {
   Hero,
   Repositories,
@@ -101,11 +101,11 @@ const User = (props) => {
 
       {userData && <Hero userData={userData} />}
       <Container maxW="container.xl">
-        <Flex w="100%" py={4} flexWrap="wrap">
-          <Box w={{ sm: "100", md: "25%" }}>
+        <Grid py={4} templateColumns="repeat(12, 1fr)" gap={6}>
+          <GridItem colSpan={[12, 12, 4]}>
             {userData && <UserDetail userData={userData} />}
-          </Box>
-          <Box w={{ sm: "100", md: "75%" }}>
+          </GridItem>
+          <GridItem colSpan={[12, 12, 8]}>
             {userData && <Stats userData={userData} />}
             {langData && repoData && (
               <Charts langData={langData} repoData={repoData} />
@@ -114,8 +114,9 @@ const User = (props) => {
             {username && <Contributions username={username} />}
 
             {repoData && <Repositories repoData={repoData} />}
-          </Box>
-        </Flex>
+          </GridItem>
+        </Grid>
+       
       </Container>
     </>
   );
