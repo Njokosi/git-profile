@@ -54,7 +54,7 @@ const Charts = ({ langData, repoData }) => {
       </Heading>
       <Grid templateColumns="repeat(6, 1fr)" gap={6}>
         <GridItem
-          colSpan={[6, 6, 3]}
+          colSpan={[6, 6, 6, 6, 3]}
           borderRadius={10}
           py={6}
           px={5}
@@ -83,7 +83,7 @@ const Charts = ({ langData, repoData }) => {
           </Box>
         </GridItem>
         <GridItem
-          colSpan={[6, 6, 3]}
+          colSpan={[6, 6, 6, 6, 3]}
           borderRadius={10}
           py={6}
           px={5}

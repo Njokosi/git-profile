@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Router from "next/router";
 import { FormControl, FormLabel, Input, Flex, Icon } from "@chakra-ui/react";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [username, setUsername] = useState("");
